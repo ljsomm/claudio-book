@@ -12,6 +12,7 @@ const wss = new ws.Server({
 
 wss.on('connection', (ws) => {
     ws.on("message", (msg) => {
-        wss.clients.forEach(client=>client.send(msg.toString()))
+        wss.clients.forEach(client=>{
+            client.send(msg.toString())})
     })
 })
